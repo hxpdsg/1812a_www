@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo '<pre>';print_r($_SERVER);echo '</pre>';
+//    return view('welcome');
 });
 
 Route::get('/user/add','UserController@add');   //测试数据
