@@ -1,16 +1,14 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Model\PrizeModel;
-
 class PrizeController extends Controller
 {
+    //
     public function index()
     {
         $data = [];
-        return view('prize/index',$data);
+        return view('prize.index',$data);
     }
     public function prizeDo()
     {
@@ -69,7 +67,6 @@ class PrizeController extends Controller
     protected function getPrizeLevel()
     {
         $rand_number = mt_rand(1,100);
-        $rand_number = 2;
         //判断一等奖个数
         if($rand_number==1){
             $count = PrizeModel::where(['level'=>1])->count();
@@ -108,7 +105,7 @@ class PrizeController extends Controller
                 $msg = "未中奖";
             }else{
                 $level =  4;           // 二等奖
-                $msg = "恭喜 阳光普照奖";
+                $msg = "恭喜 鼓励奖";
             }
         }else{
             $level = 0;         //未中奖
@@ -120,4 +117,3 @@ class PrizeController extends Controller
         ];
     }
 }
-
