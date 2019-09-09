@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use App\Model\PrizeModel;
 class PrizeController extends Controller
 {
-    //
+    //列表
     public function index()
     {
         $data = [];
